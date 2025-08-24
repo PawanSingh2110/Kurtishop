@@ -1,0 +1,393 @@
+[
+  {
+    "title": "Cherry Kurti",
+    "description": "A timeless fusion of tradition and comfort, the cherry Kurti is crafted from soft, breathable cotton adorned with intricate handblock floral prints. The delicate shaqnq lace along the neckline and sleeves adds a subtle elegance, while the pearl-drop detailing on the hem lends a graceful finish. Designed for effortless styling, this kurti is perfect for casual outings, festive gatherings, or a breezy day out..",
+    "price": 1899,
+    "discountPrice": 749,
+    "category": "pooh",
+    "collection": "Summer Breeze",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/27FC7268-3503-43C7-BFDF-C9D145017B52.jpg?v=1743096986&width=493",
+      "https://www.pehrin.com/cdn/shop/files/F7A9702A-C6BE-4E70-A2B8-F17228913AC1.jpg?v=1743096986&width=493",
+      "https://www.pehrin.com/cdn/shop/files/99B430EE-B3B3-4EA9-86EF-EFE640B1BC67.jpg?v=1743096987&width=493",
+      "https://www.pehrin.com/cdn/shop/files/F38483A8-2ABE-4F43-A83E-A5D730E8D086.jpg?v=1743096986&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Kamli Kurti (Black & White ) -Midnight Lotus Tales",
+    "description": "Rooted in the rich artistry of Rajasthan, the Kamli Kurti in black is for the woman who carries the night sky within her. The timeless monochrome hand-block print celebrates the elegance of simplicity, while the structured bodice and square neckline exude effortless confidence. Made from breathable cotton, it’s your perfect companion for balmy summer evenings or golden-hour escapes.Wear it with silver jhumkas and a white skirt for a look that speaks of heritage with a modern twist.",
+    "price": 1099,
+    "discountPrice": 899,
+    "category": "pooh",
+    "collection": "Daily Comfort",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/A9559BE4-3A46-4031-966B-7B989E814E58.jpg?v=1743099141&width=1100",
+      "https://www.pehrin.com/cdn/shop/files/C199503E-89D8-497A-8578-631EEFF959AB.jpg?v=1743099142&width=493",
+      "https://www.pehrin.com/cdn/shop/files/3485B950-7088-4AE6-9A80-04DD6208C0FC.jpg?v=1743099141&width=493",
+      "https://www.pehrin.com/cdn/shop/files/C5183B77-8373-498D-8505-CB997D25A4EF.jpg?v=1743099142&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Vrinda - Square neck Kurti",
+    "description": "Designed for everyday ease, this printed cotton kurti blends tradition with trend. Lightweight and airy, it's your go-to for work or errands. Subtle colors and soft texture make it effortlessly stylish.",
+    "price": 799,
+    "discountPrice": 699,
+    "category": "pooh",
+    "collection": "Everyday Charm",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/FBBEC316-5ABF-489D-BF10-65D8F0832806.jpg?v=1749466204&width=1100",
+      "https://www.pehrin.com/cdn/shop/files/BEF9E98D-737B-475E-9446-2B34244AD95D.jpg?v=1749466434&width=1100",
+      "https://www.pehrin.com/cdn/shop/files/77914FF2-D38F-406B-A7EF-6E34C36802B2.jpg?v=1749466434&width=1100",
+      "https://www.pehrin.com/cdn/shop/files/B5AEFF1D-6A7C-4FD7-81D9-586812F03DDC.jpg?v=1749466419&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Pastel Shade Cotton Kurti",
+    "description": "A soothing pastel kurti perfect for warm days. Its soft cotton fabric and simple silhouette make it perfect for home, office, or casual meetups. Breathable, elegant, and timeless.",
+    "price": 999,
+    "discountPrice": 849,
+    "category": "pooh",
+    "collection": "Pastel Bloom",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/6A909F58-D20D-4C33-AEFF-4D86C8C0DBDA.jpg?v=1749464059&width=1100",
+      "https://www.pehrin.com/cdn/shop/files/6AD4BD1A-819A-4975-BFFD-22E6824081C7.jpg?v=1749464141&width=1100",
+      "https://www.pehrin.com/cdn/shop/files/10DCF3CB-D906-43E2-A685-1477617D3A75.jpg?v=1749464141&width=1100"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+
+  {
+    "title": "Office Wear Cotton Kurti",
+    "description": "Crafted for working women, this kurti combines formal appeal with comfort. Its neutral tone and sharp stitching make it ideal for office wear. A wardrobe staple for busy weekdays.",
+    "price": 1149,
+    "discountPrice": 999,
+    "category": "pooh",
+    "collection": "WorkWear",
+    "image": [
+     "https://www.pehrin.com/cdn/shop/files/BAF8E5D0-64E4-421A-A41D-11951B77CA91.jpg?v=1749465091&width=493",
+     "https://www.pehrin.com/cdn/shop/files/1BE96330-C7F1-48A8-A517-D1F5387A3A9D.jpg?v=1749465091&width=493",
+     "https://www.pehrin.com/cdn/shop/files/8D8211B4-4A6A-482B-BC8D-575BB3D10B81.jpg?v=1749465091&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+
+  {
+    "title": "Golden Embroidered Silk Kurti",
+    "description": "Step into elegance with this golden embroidered silk kurti. Ideal for weddings and festivals, its shimmer and fine detailing make it stand out. Pair with leggings or churidar for a regal look.",
+    "price": 1599,
+    "discountPrice": 1399,
+    "category": "Naina",
+    "collection": "Royal Touch",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/FABB8675-712F-4340-872E-2CB63FBE709F.jpg?v=1743096878&width=493",
+      "https://www.pehrin.com/cdn/shop/files/46A940B2-9E8E-493F-80B2-416C12E27AFC.jpg?v=1743096878&width=493",
+      "https://www.pehrin.com/cdn/shop/files/FAAC2D95-84C3-4331-AA75-FF9D812D542F.jpg?v=1743096878&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Neelika Kurti (Blue Floral Print )",
+    "description": "Traditional Banarasi silk with intricate patterns, this kurti is a perfect festive piece. The art silk adds a luxurious feel. Best worn with traditional jewelry and heels.",
+    "price": 1899,
+    "discountPrice": 1599,
+    "category": "Naina",
+    "collection": "Banarasi Grace",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/EC685901-E727-4C90-8B21-0A3E37E3D2A9.jpg?v=1743098576&width=493",
+      "https://www.pehrin.com/cdn/shop/files/73D8A0B4-E1D7-4FF4-BDCE-84BEFA92E5E2.jpg?v=1743098576&width=1100",
+      "https://www.pehrin.com/cdn/shop/files/2D7C33F0-CB61-4FCA-AFA2-43AD684B9D0C.jpg?v=1743098576&width=493",
+      "https://www.pehrin.com/cdn/shop/files/5B8D746F-1DBB-484F-8348-012574EC3DE9.jpg?v=1743098576&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Meher Kurti (Sky Blue Handblock )",
+    "description": "Refreshingly subtle yet full of character, the Meher Kurti in sky blue is a must-have for lovers of soft, timeless hues. Featuring an intricate white handblock print, this kurti beautifully blends comfort and elegance. The airy cotton fabric makes it ideal for warm days, while the lace-trimmed bell sleeves add a hint of playfulness. Pair it with jeans or palazzos for a look that’s effortlessly chic and serene.",
+    "price": 1749,
+    "discountPrice": 1499,
+    "category": "Naina",
+    "collection": "Elegant Evenings",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/CC718051-940E-4E63-877B-4472A8F39BA7.jpg?v=1743098409&width=493",
+      "https://www.pehrin.com/cdn/shop/files/030F7C69-A85A-4850-AEA5-A3534F0061DB.jpg?v=1743098409&width=493",
+      "https://www.pehrin.com/cdn/shop/files/8F488CCA-14A8-4924-8C6E-E052A94B7387.jpg?v=1743098409&width=493",
+      "https://www.pehrin.com/cdn/shop/files/4873D94D-D3B3-4DE2-9E95-0DA1DFFF9A33.jpg?v=1743098409&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+
+  {
+    "title": "Nirmohi - V neck Strap Kurti",
+    "description": "Nirmohi reflects pure grace with its soft pastel hues and gentle prints.Delicately crafted, it brings out the beauty of simplicity and calm.This kurti is perfect for those who love subtle elegance and effortless charm.Light, comfortable, and fresh—ideal for everyday moments or quiet celebrations.Step into Nirmohi and embrace the beauty of being truly yourself.",
+    "price": 2099,
+    "discountPrice": 1799,
+    "category": "Naina",
+    "collection": "Traditional Glam",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/C6077A54-3B6C-4E34-A7DF-106CA324A46F.jpg?v=1749463770&width=493",
+      "https://www.pehrin.com/cdn/shop/files/A3980EAB-5522-472A-83CB-FA09C822AD73.jpg?v=1749463770&width=493",
+      "https://www.pehrin.com/cdn/shop/files/151F0CB9-572A-4EE0-9D7C-E407DF2DF3A3.jpg?v=1749463769&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Emerald Paisley Button Down Top",
+    "description": "Designer kurti in bright hues and rich silk, made for festive occasions. Features an embellished neckline and flowing fit. Looks best with jhumkas and wedges.",
+    "price": 1999,
+    "discountPrice": 1699,
+    "category": "Naina",
+    "collection": "Designer Touch",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/143AD0E4-6AC3-4916-9630-4B7A550DC8FB.jpg?v=1743097640&width=493",
+      "https://www.pehrin.com/cdn/shop/files/DCD4B022-1349-408E-8733-64E91168DC23.jpg?v=1743097640&width=493",
+      "https://www.pehrin.com/cdn/shop/files/61D82283-B397-4792-8D03-6465048543BB.jpg?v=1743097639&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 4 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 3 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Shanaya Short Kurti with Scarf",
+    "description": "Shanaya shines bright in a warm orangeshade with  sexy princess neckline  , perfect for making a bold yet graceful statement.The scandaviour fabric drapes beautifully, adding effortless flow and style.Paired with the matching scandaviour scarf, it brings a contemporary twist to classic elegance.Lightweight and comfortable, it’s ideal for festive days or casual outings",
+    "price": 899,
+    "discountPrice": 799,
+    "category": "Geet",
+    "collection": "Ethnic Prints",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/6B8D0873-6E13-4F31-AD68-4E0C4C724464.jpg?v=1749465187&width=493",
+      "https://www.pehrin.com/cdn/shop/files/EDDB0CC2-4099-4DDC-9646-863A98E83D84.jpg?v=1749465187&width=493",
+      "https://www.pehrin.com/cdn/shop/files/2B4E89A6-C9BE-4C01-98E8-FDE2A5664C6D.jpg?v=1749465187&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 4 },
+      { "size": "M", "quantity": 6 },
+      { "size": "L", "quantity": 5 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Mohini Short Kurti with Scarf",
+    "description": "Mohini enchants with its soft pink hue and graceful princess neckline.The scandaviour scarf adds a delicate, contemporary touch to the classic look.Light and airy fabric makes it perfect for both casual and festive occasions. This kurti blends tradition with modern charm effortlessly. Style the scarf with your hair and create look book for yourself .",
+    "price": 849,
+    "discountPrice": 699,
+    "category": "Geet",
+    "collection": "Summer Bloom",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/42B67FBA-8F38-43C8-B14D-72D5D08EC133.jpg?v=1749465242&width=493",
+      "https://www.pehrin.com/cdn/shop/files/AE0706D7-DEDE-46DB-A102-FF9B7947C770.jpg?v=1749465241&width=493",
+      "https://www.pehrin.com/cdn/shop/files/CADB8A65-B137-4F1E-B9BA-99CD438A69DB.jpg?v=1749465241&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 5 },
+      { "size": "L", "quantity": 7 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Tamra side cut Kurti",
+    "description": "Taamra is where colors collide and create magic — a bold fusion of red, white, blue, and deep green.With its square neckline and half sleeves, it frames a striking silhouette rooted in modern tradition.The cut-down kurti flare and dusk detail at the back add playful elegance and movement.",
+    "price": 999,
+    "discountPrice": 849,
+    "category": "Geet",
+    "collection": "Artisan Weaves",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/0B0A1444-4436-4D9C-AF7D-F685A930B152.jpg?v=1749467702&width=493",
+      "https://www.pehrin.com/cdn/shop/files/8333597C-8C17-48AC-8F62-F54AD3EE19AF.jpg?v=1749467702&width=493",
+      "https://www.pehrin.com/cdn/shop/files/B57852E0-44B2-45AB-B7E4-0C1AEA00633D.jpg?v=1749467702&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 4 },
+      { "size": "M", "quantity": 5 },
+      { "size": "L", "quantity": 3 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Jasmine Peplum Kurti",
+    "description": "Breezy, elegant, and effortlessly charming, the Jasmine Peplum Kurti is a tribute to Jaipur’s timeless artistry. Crafted from soft cotton with delicate hand-block prints, it features a flattering empire waist and playful peplum silhouette. Perfect for casual outings or festive moments—pair it with jhumkas or denim for a fusion twist! 🌿💛",
+    "price": 1099,
+    "discountPrice": 999,
+    "category": "Geet",
+    "collection": "Urban Vibes",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/928C22C2-D347-4E3C-AFC7-5D193F4314A8.jpg?v=1743099222&width=493",
+      "https://www.pehrin.com/cdn/shop/files/79E83EFE-56EF-407D-BA73-3AEA11051368.jpg?v=1743099222&width=493",
+      "https://www.pehrin.com/cdn/shop/files/3C7A005F-AF2B-4DA8-B8AC-921583A7E430.jpg?v=1743099222&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 5 },
+      { "size": "L", "quantity": 4 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "The Jodha Peplum Kurti – A Jaipur Dream",
+    "description": "Inspired by traditional Jaipuri patterns, this kurti celebrates heritage prints. Made from soft cotton, it offers comfort with a touch of tradition. Perfect for daily wear or festive minimalism.",
+    "price": 949,
+    "discountPrice": 799,
+    "category": "Geet",
+    "collection": "Desi Charm",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/IMG_6426.jpg?v=1743096676&width=493",
+      "https://www.pehrin.com/cdn/shop/files/IMG_6435.jpg?v=1743096677&width=493",
+      "https://www.pehrin.com/cdn/shop/files/IMG_6436.jpg?v=1743096676&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 6 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Ziva Top ( Rosewood Pink Blossom)",
+    "description": "A graceful nod to vintage florals, the Ziva Top in rosewood pink is designed for those who love subtle yet striking details. Featuring intricate golden-yellow floral prints, this breezy cotton top is a perfect mix of comfort and style. The delicate lace trims along the hem and sleeves add a dainty touch, making it ideal for casual outings or cozy brunches. Style it with your favorite jeans for a timeless, feminine appeal.",
+    "price": 1499,
+    "discountPrice": 1299,
+    "category": "Alisha",
+    "collection": "Grace & Glam",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/CEFEEAB4-7E24-4697-949F-CFF4DE1B88F1.jpg?v=1743097909&width=493",
+      "https://www.pehrin.com/cdn/shop/files/7ED6228C-1BBB-48E7-A41A-F33A93F9DBF6.jpg?v=1743097909&width=493",
+      "https://www.pehrin.com/cdn/shop/files/34195A26-8DE4-4AEA-82FA-7790B81B0DAD.jpg?v=1743097909&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 3 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Ira Blue Side Cut Kurti",
+    "description": "This floral printed Anarkali kurti adds a feminine touch to your wardrobe. Designed with soft fabric and full flare, it’s a comfortable yet festive pick. Perfect for brunch or light events.",
+    "price": 1299,
+    "discountPrice": 1149,
+    "category": "Alisha",
+    "collection": "Bloom Magic",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/26CE16CA-1FC4-4CC3-92A6-9A9F749BC107.jpg?v=1749468155&width=493",
+      "https://www.pehrin.com/cdn/shop/files/90C2920C-80D5-4657-BC6B-2CAAFCCFFAB7.jpg?v=1749468155&width=493",
+      "https://www.pehrin.com/cdn/shop/files/C9A39DC7-315E-49F9-A7A1-D18E19E4398D.jpg?v=1749468155&width=493"
+     
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 2 },
+      { "size": "M", "quantity": 4 },
+      { "size": "L", "quantity": 6 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Rasrang - V neck Strap Kurti",
+    "description": "Delicate chikankari work on this flowy Anarkali gives a sophisticated charm. The full sleeves and subtle detailing make it ideal for traditional affairs. A timeless ethnic piece.",
+    "price": 1799,
+    "discountPrice": 1599,
+    "category": "Alisha",
+    "collection": "Lucknowi Elegance",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/D38250A1-AF03-429B-BC13-7FEA96D60740.jpg?v=1749464363&width=493",
+      "https://www.pehrin.com/cdn/shop/files/7D38E2CE-5FFA-4AE3-B621-E28CFC80AD74.jpg?v=1749464363&width=493",
+      "https://www.pehrin.com/cdn/shop/files/2ABC5D89-4F75-4A39-A511-AF427EB37AC5.jpg?v=1749464363&width=493"
+      
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 2 },
+      { "size": "L", "quantity": 3 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Roohani Kurti ( Soft Print Handblock )",
+    "description": "Delicate and dreamy, the Roohani Kurti in soft pink is an ode to vintage charm. The intricate white handblock print on the pastel pink fabric exudes an old-world elegance. The deep V-neckline flatters the frame, while the bell sleeves add a flowy, ethereal touch. Whether styled for a daytime outing or an intimate gathering, this kurti speaks of effortless grace.",
+    "price": 1899,
+    "discountPrice": 1699,
+    "category": "Alisha",
+    "collection": "Modern Muse",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/93FA848F-BBDE-4433-B868-92159EE7D729.jpg?v=1743098326&width=493",
+      "https://www.pehrin.com/cdn/shop/files/B78C67AC-5227-498C-8C80-9A7A4039688D.jpg?v=1743098326&width=493",
+      "https://www.pehrin.com/cdn/shop/files/F0317CD6-556D-4211-86AD-DE0E175A692E.jpg?v=1743098326&width=493"
+      
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 3 },
+      { "size": "M", "quantity": 5 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  },
+  {
+    "title": "Gulnaar Kurti (Classic Floral Pink )",
+    "description": "Radiating vibrancy, the Gulnaar Kurti is a striking blend of tradition and boldness. The fiery red base, decorated with oversized white floral motifs, makes a statement wherever you go. The bell sleeves, trimmed with dainty lace, lend a touch of romance, while the breathable cotton fabric keeps you at ease. Perfect for those who love to stand out, this kurti pairs beautifully with denim or classic white trousers.",
+    "price": 2199,
+    "discountPrice": 1899,
+    "category": "Alisha",
+    "collection": "Royal Grace",
+    "image": [
+      "https://www.pehrin.com/cdn/shop/files/BCD9A929-EC01-4BF3-B010-C78E87D0639A.jpg?v=1743098486&width=493",
+      "https://www.pehrin.com/cdn/shop/files/4E496374-ACD6-4AC5-A9D8-43DB3A65B658.jpg?v=1743098486&width=493",
+      "https://www.pehrin.com/cdn/shop/files/68BA2A48-4F79-446C-B74B-11D14490F67A.jpg?v=1743098484&width=493"
+    ],
+    "stockBySize": [
+      { "size": "S", "quantity": 1 },
+      { "size": "M", "quantity": 2 },
+      { "size": "L", "quantity": 2 }
+    ],
+    "user": "684bcf5810cecdfa2210f034"
+  }
+]

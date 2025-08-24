@@ -1,0 +1,44 @@
+/* index.css or main.css */
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+
+
+/* index.css */
+.aleo {
+  font-family: 'Aleo', serif;
+}
+
+.poppins{
+  font-family: "Poppins",sans-serif;
+}
+
+
+
+
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+
+/* 👇 Adjust animation to stop exactly after 5 spans */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);  /* start center */
+  }
+  100% {
+    transform: translateX(-50%); /* shift left by 5 spans worth */
+  }
+}
+
+.scroll-text {
+  animation: scroll 20s linear infinite; /* speed = 20s, adjust as needed */
+  display: inline-block;
+}
