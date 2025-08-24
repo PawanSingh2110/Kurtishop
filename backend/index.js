@@ -57,6 +57,9 @@ app.get("/api/debug-cookies", (req, res) => {
   console.log("Cookies:", req.cookies);
   res.json(req.cookies);
 });
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 // ✅ Start server
 app.listen(PORT, () => {
