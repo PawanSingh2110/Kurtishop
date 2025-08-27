@@ -13,8 +13,10 @@ const PORT = process.env.PORT || 40001;
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = process.env.FRONTEND_URL
-
+const allowedOrigins = [
+  process.env.FRONTEND_URL,                 // local frontend
+  "https://your-frontend.vercel.app"       // deployed frontend
+];
 
 app.use(
   cors({
@@ -30,6 +32,8 @@ app.use(
   })
 );
 
+// ✅ Also needed to parse cookies if you’re using them
+import cookieParser from "cookie-parser";
 
 // ✅ Connect MongoDB
 mongoose.connect(process.env.MONGO_URI, {
