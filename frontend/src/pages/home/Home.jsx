@@ -18,6 +18,7 @@ const Home = () => {
       <ImageGallery/>
       <Review/>
       <FollowSection/>
+      
     </div>
   )
 }

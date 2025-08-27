@@ -15,7 +15,7 @@ import Naina from "./pages/allProduct/Naina.jsx";
 import Geet from "./pages/allProduct/Geet.jsx";
 import Alisha from "./pages/allProduct/Alisha.jsx";
 import { CartProvider } from "./context/CartContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CartDrawer from "./components/cart/Cartdrawer.jsx";
 import { AdminDashboard } from "./pages/Admin/AdminDashboard.jsx";
 import PublicRoute from "./ProtectRoutes/PublicRoute.jsx";
@@ -29,13 +29,15 @@ import Orderdeatils from "./pages/User/Orderdeatils.jsx";
 function App() {
   const location = useLocation();
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const hideNavbarPaths = [
-    "/auth",
-    "/verify-code",
-    "/profile",
-    "/dashboard",
-  ];
+  // Fake loader (simulate app initialization)
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200); // 1.2 sec
+    return () => clearTimeout(timer);
+  }, []);
+
+  const hideNavbarPaths = ["/auth", "/verify-code", "/profile", "/dashboard"];
 
   const isKnownPath = [
     "/",
@@ -52,6 +54,17 @@ function App() {
     hideNavbarPaths.includes(location.pathname) || !isKnownPath;
 
   const isHome = location.pathname === "/";
+
+  // ✅ Show Loader first
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        <div className=" text-white aleo text-5xl font font-medium">
+          Welcome to Pehrin
+        </div>
+      </div>
+    );
+  }
 
   return (
     <AuthProvider>
@@ -102,7 +115,7 @@ function App() {
               }
             />
 
-            {/* ✅ Checkout + Orders (Protected by CheckRoutes) */}
+            {/* ✅ Checkout + Orders */}
             <Route
               path="/checkout"
               element={
@@ -139,6 +152,8 @@ function App() {
         </div>
 
         {/* Optional Footer */}
+{/* ✅ Footer same logic as Navbar */}
+{!hideNavbar && <Footer />}
         {/* {!hideNavbar && <Footer />} */}
       </CartProvider>
     </AuthProvider>
