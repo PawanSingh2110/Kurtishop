@@ -14,10 +14,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 // ✅ CORS setup (for frontend running on localhost:5173)
-app.use(cors({
-  origin: "*", // your frontend port
-  credentials: true,              // allow cookies to be sent
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://kurtishop-6mc9.vercel.app"], 
+    credentials: true,
+  })
+);
 
 // ✅ Connect MongoDB
 mongoose.connect(process.env.MONGO_URI, {
