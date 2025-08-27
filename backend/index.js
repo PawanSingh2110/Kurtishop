@@ -13,13 +13,23 @@ const PORT = process.env.PORT || 40001;
 app.use(express.json());
 app.use(cookieParser());
 
-// ✅ CORS setup (for frontend running on localhost:5173)
+const allowedOrigins = process.env.FRONTEND_URL
+
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, 
-    credentials: true,
+    origin: function (origin, callback) {
+      // allow requests with no origin (like Postman or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // allow cookies/auth headers
   })
 );
+
 
 // ✅ Connect MongoDB
 mongoose.connect(process.env.MONGO_URI, {
