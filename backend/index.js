@@ -16,7 +16,7 @@ app.use(cookieParser());
 // ✅ CORS setup (for frontend running on localhost:5173)
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://kurtishop-6mc9.vercel.app"], 
+    origin: process.env.FRONTEND_URL, 
     credentials: true,
   })
 );
