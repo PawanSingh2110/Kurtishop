@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 // ✅ CORS setup (for frontend running on localhost:5173)
 app.use(cors({
-  origin: "http://localhost:5173", // your frontend port
+  origin: "*", // your frontend port
   credentials: true,              // allow cookies to be sent
 }));
 
