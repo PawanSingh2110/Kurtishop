@@ -69,92 +69,94 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <ScrollToTop />
-        {!hideNavbar && <Navbar setIsCartOpen={setIsCartOpen} />}
+        <div className="overflow-hidden">
+          <ScrollToTop />
+          {!hideNavbar && <Navbar setIsCartOpen={setIsCartOpen} />}
 
-        <div className={`${!hideNavbar ? (isHome ? "mt-0" : "mt-20") : ""}`}>
-          <Routes>
-            {/* ✅ Public Routes */}
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/auth"
-              element={
-                <PublicRoute>
-                  <Auth />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="/verify-code"
-              element={
-                <PublicRoute>
-                  <Verifycode />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="/productdetail/:id"
-              element={<ProductDetail setIsCartOpen={setIsCartOpen} />}
-            />
+          <div className={`${!hideNavbar ? (isHome ? "mt-0" : "mt-20") : ""}`}>
+            <Routes>
+              {/* ✅ Public Routes */}
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/auth"
+                element={
+                  <PublicRoute>
+                    <Auth />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/verify-code"
+                element={
+                  <PublicRoute>
+                    <Verifycode />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/productdetail/:id"
+                element={<ProductDetail setIsCartOpen={setIsCartOpen} />}
+              />
 
-            {/* ✅ Product Routes */}
-            <Route path="/product" element={<Allproduct />} />
-            <Route path="/category/pooh" element={<Pooh />} />
-            <Route path="/category/naina" element={<Naina />} />
-            <Route path="/category/geet" element={<Geet />} />
-            <Route path="/category/aisha" element={<Alisha />} />
-            <Route path="*" element={<PageNotFound />} />
+              {/* ✅ Product Routes */}
+              <Route path="/product" element={<Allproduct />} />
+              <Route path="/category/pooh" element={<Pooh />} />
+              <Route path="/category/naina" element={<Naina />} />
+              <Route path="/category/geet" element={<Geet />} />
+              <Route path="/category/aisha" element={<Alisha />} />
+              <Route path="*" element={<PageNotFound />} />
 
-            {/* ✅ User Routes */}
-            <Route
-              path="/profile"
-              element={
-                <UserOnlyRoute>
-                  <Profile />
-                </UserOnlyRoute>
-              }
-            />
+              {/* ✅ User Routes */}
+              <Route
+                path="/profile"
+                element={
+                  <UserOnlyRoute>
+                    <Profile />
+                  </UserOnlyRoute>
+                }
+              />
 
-            {/* ✅ Checkout + Orders */}
-            <Route
-              path="/checkout"
-              element={
-                <CheckRoutes>
-                  <Checkout />
-                </CheckRoutes>
-              }
-            />
-            <Route
-              path="/order-details/:id"
-              element={
-                <CheckRoutes>
-                  <Orderdeatils />
-                </CheckRoutes>
-              }
-            />
+              {/* ✅ Checkout + Orders */}
+              <Route
+                path="/checkout"
+                element={
+                  <CheckRoutes>
+                    <Checkout />
+                  </CheckRoutes>
+                }
+              />
+              <Route
+                path="/order-details/:id"
+                element={
+                  <CheckRoutes>
+                    <Orderdeatils />
+                  </CheckRoutes>
+                }
+              />
 
-            {/* ✅ Admin Routes */}
-            <Route
-              path="/dashboard"
-              element={
-                <AdminOnlyRoute>
-                  <AdminDashboard />
-                </AdminOnlyRoute>
-              }
-            />
-          </Routes>
+              {/* ✅ Admin Routes */}
+              <Route
+                path="/dashboard"
+                element={
+                  <AdminOnlyRoute>
+                    <AdminDashboard />
+                  </AdminOnlyRoute>
+                }
+              />
+            </Routes>
 
-          {/* ✅ Cart Drawer */}
-          <CartDrawer
-            isOpen={isCartOpen}
-            onClose={() => setIsCartOpen(false)}
-          />
+            {/* ✅ Cart Drawer */}
+            <CartDrawer
+              isOpen={isCartOpen}
+              onClose={() => setIsCartOpen(false)}
+            />
+          </div>
+
+          {/* Optional Footer */}
+          {/* ✅ Footer same logic as Navbar */}
+          {!hideNavbar && <Footer />}
+          {/* {!hideNavbar && <Footer />} */}
         </div>
-
-        {/* Optional Footer */}
-{/* ✅ Footer same logic as Navbar */}
-{!hideNavbar && <Footer />}
-        {/* {!hideNavbar && <Footer />} */}
       </CartProvider>
     </AuthProvider>
   );

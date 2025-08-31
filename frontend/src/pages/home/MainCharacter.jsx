@@ -74,7 +74,7 @@ const MainCharacter = () => {
       <div className="md:hidden flex gap-4 overflow-x-auto scrollbar-hidden">
         {videomain.map((item, index) => (
           <div key={index} className="min-w-[310px] aspect-[3/4] h-[520px]">
-            <VideoCard src={item.video} autoPlayFirst={index === 0} />
+            <VideoCard src={item.video} autoPlayFirst={index === 1} />
           </div>
         ))}
       </div>
@@ -83,7 +83,7 @@ const MainCharacter = () => {
       <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4">
         {videomain.map((item, index) => (
           <div key={index} className="w-full aspect-[3/5]">
-            <VideoCard src={item.video} autoPlayFirst={index === 0} />
+            <VideoCard src={item.video} autoPlayFirst={index === 1} />
           </div>
         ))}
       </div>
