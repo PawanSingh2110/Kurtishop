@@ -1,41 +1,43 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaRegUser } from "react-icons/fa6";
 import { IoBagHandle } from "react-icons/io5";
-import { IoIosSearch, IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { GrMenu } from "react-icons/gr";
 import MenuSlider from "./commons/Menuslider";
-import SearchDrawer from "./commons/SearchDrawer";
-import Cartdrawer from "./cart/Cartdrawer";
-import { useLocation } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom"; // Make sure this is imported
 import CartDrawer from "./cart/Cartdrawer";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const { role } = useAuth();
-  const navigate = useNavigate();
   const { cartItems } = useCart();
-
-  const handleUserClick = () => {
-    if (!role) {
-      navigate("/auth");
-    } else if (role === "user") {
-      navigate("/profile");
-    } else if (role === "admin") {
-      navigate("/dashboard");
-    }
-  };
-
+  const navigate = useNavigate();
+  const location = useLocation();
   const dropdownRef = useRef(null);
 
-  // Close dropdown if clicking outside
+  const isHome = location.pathname === "/";
+
+  const links = [
+    { name: "Pooh", path: "/category/pooh" },
+    { name: "Naina", path: "/category/naina" },
+    { name: "Geet", path: "/category/geet" },
+    { name: "Alisha", path: "/category/alisha" }, // ✅ spelling fixed
+  ];
+
+  // ✅ Handle user click
+  const handleUserClick = () => {
+    if (!role) navigate("/auth");
+    else if (role === "user") navigate("/profile");
+    else if (role === "admin") navigate("/dashboard");
+  };
+
+  // ✅ Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -46,57 +48,43 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Handle scroll for background color change
+  // ✅ Scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 0);
     };
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const location = useLocation();
-  const isHome = location.pathname === "/";
-
-  const links = [
-    { name: "Pooh", path: "/category/pooh" },
-    { name: "Naina", path: "/category/naina" },
-    { name: "Geet", path: "/category/geet" },
-    { name: "Aisha", path: "/category/aisha" },
-  ];
 
   return (
     <>
       <div
-        className={`fixed top-0 inset-x-0 z-50 px-8 py-4 flex justify-between items-center transition-colors duration-300 
-    ${
-      isHome
-        ? isScrolled
-          ? "bg-[#580E0C]/80 text-white"
-          : "bg-transparent text-white"
-        : "bg-white text-[#580E0C] shadow-md "
-    }`}
+        className={`fixed top-0 inset-x-0 z-50 px-4 md:px-8 py-4 flex justify-between items-center transition-colors duration-300 
+        ${
+          isHome
+            ? isScrolled
+              ? "bg-[#580E0C]/80 text-white"
+              : "bg-transparent text-white"
+            : "bg-white text-[#580E0C] shadow-md"
+        }`}
       >
         {/* Left Side */}
-        <div className="flex items-center gap-10 poppins text-lg">
-          <div className="flex gap-3 justify-center items-center">
+        <div className="flex items-center gap-4 md:gap-10 poppins text-lg">
+          <div className="flex gap-3 items-center">
             <GrMenu
               className="text-xl lg:hidden cursor-pointer"
               onClick={() => setDrawerOpen(true)}
             />
-            <a href="/" className="text-4xl aleo font-bold">
+            <a href="/" className="text-3xl md:text-4xl aleo font-bold">
               Pehrin_
             </a>
           </div>
+
+          {/* Desktop Nav */}
           <ul className="hidden lg:flex items-center gap-6">
             <li className="group relative cursor-pointer">
-              <a href="/"> Home</a>
+              <a href="/">Home</a>
               <span
                 className={`absolute left-0 -bottom-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full ${
                   isHome ? "bg-white" : "bg-black"
@@ -133,9 +121,9 @@ const Navbar = () => {
                 />
               </button>
 
-              {/* Dropdown */}
+              {/* Dropdown Menu */}
               <div
-                className={`absolute left-0 mt-2 w-60 bg-white text-[#580E0C]  shadow-lg rounded-md z-50 transform transition-all duration-300 origin-top ${
+                className={`absolute left-0 mt-2 w-60 max-w-[90vw] bg-white text-[#580E0C] shadow-lg rounded-md z-50 transform transition-all duration-300 origin-top ${
                   dropdownOpen
                     ? "opacity-100 scale-100 visible"
                     : "opacity-0 scale-95 invisible"
@@ -147,7 +135,7 @@ const Navbar = () => {
                       <Link
                         to={item.path}
                         onClick={() => setDropdownOpen(false)}
-                        className="group px-4 py-2 cursor-pointer flex items-center justify-between"
+                        className="group px-4 py-2 flex items-center justify-between"
                       >
                         <span>{item.name}</span>
                         <IoIosArrowForward className="text-gray-500 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-200" />
@@ -157,6 +145,7 @@ const Navbar = () => {
                 </ul>
               </div>
             </li>
+
             <li className="group relative cursor-pointer">
               ContactUs
               <span
@@ -170,14 +159,10 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div className="flex items-center gap-5 text-2xl">
-          {/* <IoIosSearch
-            className="cursor-pointer"
-            onClick={() => setIsSearchOpen(true)}
-          /> */}
           <FaRegUser
             className="cursor-pointer hidden lg:block"
             onClick={handleUserClick}
-          />{" "}
+          />
           {role !== "admin" && (
             <div className="relative">
               <IoBagHandle
@@ -194,15 +179,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Menu Slider */}
+      {/* Mobile Menu Drawer */}
       <MenuSlider isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} />
-      {/* search bar */}
-      {/* <SearchDrawer
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-      /> */}
-      {/* cart item */}
 
+      {/* Cart Drawer */}
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );

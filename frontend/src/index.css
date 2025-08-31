@@ -42,3 +42,14 @@
   animation: scroll 20s linear infinite; /* speed = 20s, adjust as needed */
   display: inline-block;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; /* hides unwanted scroll */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

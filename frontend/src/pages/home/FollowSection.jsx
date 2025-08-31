@@ -40,7 +40,7 @@ const InstaFeed = () => {
           <span className="font-bold">@pehrin_</span>
         </h2>
 
-        <h2 className="lg:hidden md:mx-40 text-center text-4xl whitespace-nowrap font-serif text-brown-900">
+        <h2 className="lg:hidden md:mx-40 text-center text-3xl whitespace-nowrap font-serif text-brown-900">
           Follow us on <span className="font-bold">@pehrin_</span>
         </h2>
       </div>
