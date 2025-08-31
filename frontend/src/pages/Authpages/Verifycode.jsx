@@ -9,7 +9,6 @@ const VerifyCode = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const email = location.state?.email;
 
@@ -33,7 +32,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
       setLoading(true);
 
       const res = await axios.post(
-        `${backendURL}/api/verify-code`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/verify-code`,
         { email, code },
         { withCredentials: true }
       );

@@ -14,7 +14,6 @@ const Addproduct = () => {
     collection: "",
     image: [null], // Initialize with one empty slot
   });
-  const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 
 const handleChange = (e, index = null) => {
@@ -82,7 +81,7 @@ const handleChange = (e, index = null) => {
         if (file) submission.append("images", file);
       });
 
-      const res = await axios.post(`${backendURL}/product/create`, submission, {
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/product/create`, submission, {
         withCredentials: true,
         headers: {
           "Content-Type": "multipart/form-data",

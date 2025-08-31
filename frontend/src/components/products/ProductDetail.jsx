@@ -27,11 +27,10 @@ const ProductDetail = ({ setIsCartOpen }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const { cartVersion } = useCart();
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     axios
-      .get(`${backendURL}/product/detail/${id}`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/product/detail/${id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -48,7 +47,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     if (!product || !selectedSize) return;
     axios
-      .get(`${backendURL}/cart`, { withCredentials: true })
+      .get(`${import.meta.env.VITE_BACKEND_URL}/cart`, { withCredentials: true })
       .then((res) => {
         const item = res.data.find(
           (i) => i.productId._id === id && i.size === selectedSize
@@ -67,7 +66,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
     try {
       setIsAdding(true);
       await axios.post(
-        `${backendURL}/cart/add`,
+        `${import.meta.env.VITE_BACKEND_URL}/cart/add`,
         {
           productId: id,
           size: selectedSize,
@@ -111,7 +110,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 
     // 1️⃣ Create Razorpay order
     const { data } = await axios.post(
-      `${backendURL}/api/buy-now`,
+      `${import.meta.env.VITE_BACKEND_URL}/api/buy-now`,
       { ...buyProduct, totalPrice, },
       { withCredentials: true }
     );
@@ -129,7 +128,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
         try {
           // 3️⃣ Verify payment
           const verifyRes = await axios.post(
-            `${backendURL}/api/buy-now/verify`,
+            `${import.meta.env.VITE_BACKEND_URL}/api/buy-now/verify`,
             {
               ...response,
               product: buyProduct,
@@ -213,7 +212,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
     });
 
     try {
-      await axios.put(`${backendURL}/product/update/${id}`, formData, {
+      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/product/update/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
         withCredentials: true,
       });
@@ -552,7 +551,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
                       onClick={async () => {
                         try {
                           await axios.delete(
-                            `${backendURL}/product/del/${id}`,
+                            `${import.meta.env.VITE_BACKEND_URL}/product/del/${id}`,
                             {
                               withCredentials: true,
                             }

@@ -28,7 +28,7 @@ const OrderSummary = () => {
     const fetchOrder = async () => {
       try {
         const { data } = await axios.get(
-          `${backendURL}/api/orders/${id}`,
+          `${import.meta.env.VITE_BACKEND_URL}/api/orders/${id}`,
           { withCredentials: true }
         );
         console.log(data);

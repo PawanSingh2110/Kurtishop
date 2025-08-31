@@ -5,14 +5,13 @@ import { useCart } from "../../context/CartContext";
 import { toast } from "react-toastify";
 const CartCard = () => {
   const { cartItems, refreshCart } = useCart();
-  const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 
   const updateQuantity = async (id, quantity, maxQty) => {
     if (quantity < 1 || quantity > maxQty) return alert("Invalid quantity");
     try {
       await axios.put(
-        `${backendURL}/cart/update/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/cart/update/${id}`,
         { quantity },
         { withCredentials: true }
       );
@@ -23,7 +22,7 @@ const CartCard = () => {
   };
 
   const handleRemove = async (id) => {
-    await axios.delete(`http://localhost:40001/cart/delete/${id}`, {
+    await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/cart/delete/${id}`, {
       withCredentials: true,
     });
     await refreshCart();

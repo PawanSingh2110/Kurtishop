@@ -23,7 +23,7 @@ const CheckoutComponent = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const { data } = await axios.get(`${backendURL}/cart/`, {
+        const { data } = await axios.get(`${backendURimport.meta.env.VITE_BACKEND_URL}/cart/`, {
           withCredentials: true,
         });
         setOrderItems(data);
@@ -76,7 +76,6 @@ const CheckoutComponent = () => {
 
   const navigate = useNavigate();
   const { Razorpay } = useRazorpay();
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const handlePayment = async () => {
     if (!validate()) return;
@@ -123,7 +122,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
           try {
             // 3️⃣ Verify payment on backend
             const verifyRes = await axios.post(
-              `${backendURL}/api/verify`,
+              `${import.meta.env.VITE_BACKEND_URL}/api/verify`,
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,

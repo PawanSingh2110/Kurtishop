@@ -6,12 +6,11 @@ const AllReview = () => {
   const [reviews, setReviews] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   // Fetch reviews
   const fetchReviews = async () => {
     try {
-      const res = await axios.get(`${backendURL}/review/reviews`);
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/review/reviews`);
       setReviews(Array.isArray(res.data) ? res.data : []);
     } catch (error) {
       console.error("Error fetching reviews:", error);

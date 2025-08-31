@@ -25,7 +25,6 @@ const AddReviews = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +32,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 
     try {
       const res = await axios.post(
-        `${backendURL}/review/add`,
+        `${import.meta.env.VITE_BACKEND_URL}/review/add`,
         formData,
         {
           withCredentials:true // 👈 send token

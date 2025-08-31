@@ -8,7 +8,6 @@ const Auth = () => {
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,7 +34,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
     }
 
     try {
-      const res = await axios.post(`${backendURL}/api/request-code`, {
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/request-code`, {
         email,
       });
 

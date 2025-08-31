@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get(`${backendURL}/api/me`, { withCredentials: true });
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/me`, { withCredentials: true });
       setUser(res.data);
     } catch (err) {
       setUser(null);
@@ -30,13 +30,12 @@ export const AuthProvider = ({ children }) => {
     }
   }, [user]);
 
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 const navigate = useNavigate(); // inside your component
 
 const logout = async () => {
   try {
-    await axios.post(`${backendURL}/api/logout`, {}, { withCredentials: true });
+    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/logout`, {}, { withCredentials: true });
     setUser(null);
     navigate("/");              // ✅ Redirect to home page
     window.location.reload();   // ✅ Reload the window

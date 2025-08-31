@@ -6,12 +6,11 @@ const TestimonialSlider = () => {
   const [testimonials, setTestimonials] = useState([]);
   const [index, setIndex] = useState(0);
   const [cardsToShow, setCardsToShow] = useState(3);
-const backendURL = import.meta.env.VITE_BACKEND_URL;
   // ✅ Fetch reviews with axios
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const res = await axios.get(`${backendURL}/review/reviews`,); // adjust URL if needed
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/review/reviews`,); // adjust URL if needed
         setTestimonials(res.data);
       } catch (error) {
         console.error("Error fetching reviews:", error);

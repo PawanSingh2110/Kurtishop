@@ -5,11 +5,10 @@ import order from "../../assets/order.png"
 const UserOrder = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
-const backendURL = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const { data } = await axios.get(`${backendURL}/api/myorders`, {
+        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/myorders`, {
           withCredentials: true, // ✅ send cookies for auth
         });
         setOrders(data);

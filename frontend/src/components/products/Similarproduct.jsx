@@ -6,12 +6,11 @@ const Similarproduct = () => {
   const navigate = useNavigate();
   const { id } = useParams(); // Get current product ID from URL
   const [similarProducts, setSimilarProducts] = useState([]);
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     const fetchSimilar = async () => {
       try {
-        const res = await axios.get(`${backendURL}/product/similar/${id}`, {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/product/similar/${id}`, {
           withCredentials: true, // if using cookies
         });
         setSimilarProducts(res.data.similarProducts || []);

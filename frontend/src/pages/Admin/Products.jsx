@@ -9,7 +9,6 @@ const Products = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const [editData, setEditData] = useState({
     title: "",
@@ -31,7 +30,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`${backendURL}/product/filter`, {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/product/filter`, {
         withCredentials: true,
       });
       setProducts(res.data.products || []);
@@ -88,7 +87,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 
     try {
       await axios.put(
-        `${backendURL}/product/update/${editingId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/product/update/${editingId}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -110,7 +109,7 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${backendURL}/product/del/${deleteId}`, {
+      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/product/del/${deleteId}`, {
         withCredentials: true,
       });
       toast.success("Product deleted");

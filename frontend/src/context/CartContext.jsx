@@ -4,14 +4,13 @@ import axios from "axios";
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 const [cartVersion, setCartVersion] = useState(0); // 🔁 trigger 
   const refreshCart = async () => {
     try {
-      const res = await axios.get(`${backendURL}/cart/`, {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/cart/`, {
         withCredentials: true,
       });
       setCartItems(res.data);

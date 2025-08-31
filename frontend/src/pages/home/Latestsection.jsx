@@ -4,12 +4,12 @@ import ProductCard from "../../components/products/ProductCard";
 
 const Latestsection = () => {
   const [products, setProducts] = useState([]);
-const backendURL = import.meta.env.VITE_BACKEND_URL;
+// const backendURL = import.meta.env.VITE_BACKEND_URL;
   useEffect(() => {
     const fetchLatestProducts = async () => {
       try {
         const response = await axios.get(
-          `${backendURL}/product/latest`,
+          `${import.meta.env.VITE_BACKEND_URL}/product/latest`,
           { withCredentials: true }
         );
         setProducts(response.data.latestProducts);

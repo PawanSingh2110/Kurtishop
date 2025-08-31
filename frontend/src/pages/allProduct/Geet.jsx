@@ -6,12 +6,11 @@ import SortDropdown from "../../components/products/SortDropdown";
 const Allproduct = () => {
   const [products, setProducts] = useState([]);
   const [sortBy, setSortBy] = useState(""); // For sorting
-const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchAllProducts = async (sortOption = "") => {
     try {
       const response = await axios.get(
-        `${backendURL}/product/filter?category=geet`,
+        `${import.meta.env.VITE_BACKEND_URL}/product/filter?category=geet`,
 
         {
           params: { sortby: sortOption },
