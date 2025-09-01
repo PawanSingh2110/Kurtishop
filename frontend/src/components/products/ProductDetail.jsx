@@ -10,7 +10,7 @@ import { useCart } from "../../context/CartContext";
 import { toast } from "react-toastify";
 const ProductDetail = ({ setIsCartOpen }) => {
   const { id } = useParams();
-  const { role,user } = useAuth();
+  const { role, user } = useAuth();
   const navigate = useNavigate();
   const [mainImage, setMainImage] = useState(null);
   const [product, setProduct] = useState(null);
@@ -47,7 +47,9 @@ const ProductDetail = ({ setIsCartOpen }) => {
   useEffect(() => {
     if (!product || !selectedSize) return;
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/cart`, { withCredentials: true })
+      .get(`${import.meta.env.VITE_BACKEND_URL}/cart`, {
+        withCredentials: true,
+      })
       .then((res) => {
         const item = res.data.find(
           (i) => i.productId._id === id && i.size === selectedSize
@@ -84,91 +86,91 @@ const ProductDetail = ({ setIsCartOpen }) => {
     }
   };
 
- const handleBuyNow = async () => {
-  if (role !== "user") return navigate("/auth");
-  if (!selectedSize) return setSizeError(true);
-  setSizeError(false);
+  const handleBuyNow = async () => {
+    if (role !== "user") return navigate("/auth");
+    if (!selectedSize) return setSizeError(true);
+    setSizeError(false);
 
-  try {
-    if (!product) {
-      toast.error("Product not loaded yet");
-      return;
+    try {
+      if (!product) {
+        toast.error("Product not loaded yet");
+        return;
+      }
+
+      // ✅ avoid name clash → call it buyProduct
+      const buyProduct = {
+        productId: id,
+        name: product.title, // use title
+        image: product.image[0], // first image
+        price: product.discountPrice, // use discount price for checkout
+        size: selectedSize,
+        quantity: 1,
+      };
+
+      const totalPrice = buyProduct.price * buyProduct.quantity;
+
+      // 1️⃣ Create Razorpay order
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/buy-now`,
+        { ...buyProduct, totalPrice },
+        { withCredentials: true }
+      );
+
+      // 2️⃣ Open Razorpay checkout
+      const options = {
+        key: data.key,
+        amount: data.amount,
+        currency: data.currency,
+        order_id: data.orderId,
+        name: "Kurtishop",
+        description: "Buy Now Order",
+        handler: async function (response) {
+          try {
+            // 3️⃣ Verify payment
+            const verifyRes = await axios.post(
+              `${import.meta.env.VITE_BACKEND_URL}/api/buy-now/verify`,
+              {
+                ...response,
+                product: buyProduct,
+                totalPrice,
+              },
+              { withCredentials: true }
+            );
+
+            console.log(verifyRes.data.order._id);
+
+            toast.success("Payment verified successfully!");
+
+            navigate(`/order-details/${verifyRes.data.order._id}`, {});
+          } catch (err) {
+            console.error("Verification failed", err);
+            toast.error("Payment verification failed");
+          }
+        },
+        prefill: {
+          email: user?.email,
+        },
+        theme: {
+          color: "#F37254",
+        },
+      };
+
+      const razor = new window.Razorpay(options);
+      razor.open();
+    } catch (error) {
+      console.error("Buy Now Error:", error);
+      toast.error("Something went wrong, try again!");
     }
-
-    // ✅ avoid name clash → call it buyProduct
-    const buyProduct = {
-      productId: id,
-      name: product.title,           // use title
-      image: product.image[0],       // first image
-      price: product.discountPrice,  // use discount price for checkout
-      size: selectedSize,
-      quantity: 1,
-    };
-
-    const totalPrice = buyProduct.price * buyProduct.quantity;
-
-
-    // 1️⃣ Create Razorpay order
-    const { data } = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/buy-now`,
-      { ...buyProduct, totalPrice, },
-      { withCredentials: true }
-    );
-
-
-    // 2️⃣ Open Razorpay checkout
-    const options = {
-      key: data.key,
-      amount: data.amount,
-      currency: data.currency,
-      order_id: data.orderId,
-      name: "Kurtishop",
-      description: "Buy Now Order",
-      handler: async function (response) {
-        try {
-          // 3️⃣ Verify payment
-          const verifyRes = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}/api/buy-now/verify`,
-            {
-              ...response,
-              product: buyProduct,
-              totalPrice,
-            },
-            { withCredentials: true }
-          );
-
-          console.log(verifyRes.data.order._id);
-
-          toast.success("Payment verified successfully!");
-          
-          navigate(`/order-details/${verifyRes.data.order._id}`, {
-          
-          });
-        } catch (err) {
-          console.error("Verification failed", err);
-          toast.error("Payment verification failed");
-        }
-      },
-      prefill: {
-        email: user?.email,
-      },
-      theme: {
-        color: "#F37254",
-      },
-    };
-
-
-    const razor = new window.Razorpay(options);
-    razor.open();
-  } catch (error) {
-    console.error("Buy Now Error:", error);
-    toast.error("Something went wrong, try again!");
-  }
-};
-
+  };
 
   if (error || (!product && error !== null)) return <Pagenotfound />;
-  if (!product) return <div className="flex justify-center items-center h-[80vh]"> <div className="text-center text-5xl aleo  py-20">Loading...</div></div>;
+  if (!product)
+    return (
+      <div className="flex justify-center items-center h-[80vh]">
+        {" "}
+        <div className="text-center text-5xl aleo  py-20">Loading...</div>
+      </div>
+    );
   if (error) return <div>Error or Loading...</div>;
   const isOutOfStock = product.stockBySize.every((s) => s.quantity === 0);
 
@@ -212,10 +214,14 @@ const ProductDetail = ({ setIsCartOpen }) => {
     });
 
     try {
-      await axios.put(`${import.meta.env.VITE_BACKEND_URL}/product/update/${id}`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        withCredentials: true,
-      });
+      await axios.put(
+        `${import.meta.env.VITE_BACKEND_URL}/product/update/${id}`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+          withCredentials: true,
+        }
+      );
       toast.success("Product updated successfully");
       setShowEditModal(false);
       window.location.reload();
@@ -235,8 +241,6 @@ const ProductDetail = ({ setIsCartOpen }) => {
   const handleNewImageChange = (e) => {
     setNewImages([...e.target.files]);
   };
-
- 
 
   return (
     <>
@@ -265,8 +269,8 @@ const ProductDetail = ({ setIsCartOpen }) => {
               ))}
             </div>
           </div>
-
-          <div className="hidden lg:block space-y-6">
+          {/* large screen image  */}
+          <div className="hidden lg:block h-screen overflow-y-auto scrollbar-hidden  space-y-6">
             {product.image.map((img, i) => (
               <img
                 key={i}
@@ -551,7 +555,9 @@ const ProductDetail = ({ setIsCartOpen }) => {
                       onClick={async () => {
                         try {
                           await axios.delete(
-                            `${import.meta.env.VITE_BACKEND_URL}/product/del/${id}`,
+                            `${
+                              import.meta.env.VITE_BACKEND_URL
+                            }/product/del/${id}`,
                             {
                               withCredentials: true,
                             }
