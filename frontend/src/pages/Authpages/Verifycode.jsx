@@ -3,6 +3,7 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import Error from "../../assets/error.png";
 import { toast } from "react-toastify";
+
 const VerifyCode = () => {
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
@@ -15,7 +16,7 @@ const VerifyCode = () => {
   if (!email) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <img className=" object-contain h-screen" src={Error} alt="" />
+        <img className="object-contain h-screen" src={Error} alt="" />
       </div>
     );
   }
@@ -81,7 +82,8 @@ const VerifyCode = () => {
       </div>
 
       {/* Right Form */}
-      <div className="flex justify-center items-center px-8">
+      <div className="flex flex-col items-center justify-center min-h-screen lg:h-screen px-8">
+        {" "}
         <form
           onSubmit={handleSubmit}
           className="bg-gradient-to-br from-white via-pink-50 to-pink-100 p-10 rounded-3xl shadow-2xl w-full max-w-md border border-pink-200"
@@ -97,7 +99,7 @@ const VerifyCode = () => {
 
           <label
             htmlFor="code"
-            className="block mb-2 text-lg font-medium text-[#580e0c] "
+            className="block mb-2 text-lg font-medium text-[#580e0c]"
           >
             Verification Code
           </label>
@@ -108,7 +110,7 @@ const VerifyCode = () => {
             onChange={(e) => setCode(e.target.value)}
             maxLength={6}
             inputMode="numeric"
-            className="w-full border border-[#580e0c] text-[#580e0c]  rounded-lg px-4 py-3 mb-3 focus:outline-none focus:ring-2 focus:ring-[#580e0c] text-lg shadow-sm"
+            className="w-full border border-[#580e0c] text-[#580e0c] rounded-lg px-4 py-3 mb-3 focus:outline-none focus:ring-2 focus:ring-[#580e0c] text-lg shadow-sm"
             placeholder="123456"
             autoFocus
           />
@@ -130,10 +132,10 @@ const VerifyCode = () => {
               : "Verify"}
           </button>
 
-          <div className=" mt-3 px-2">
+          <div className="mt-3 px-2">
             <a
               href="/auth"
-              className="aleo text-[#580e0c] whitespace-nowrap text-sm font-medium  hover:text-red-400 transition  duration-150"
+              className="aleo text-[#580e0c] whitespace-nowrap text-sm font-medium hover:text-red-400 transition duration-150"
             >
               Use a different email to sign up
             </a>

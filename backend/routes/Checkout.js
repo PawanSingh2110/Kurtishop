@@ -8,6 +8,7 @@ const CartItem = require("../models/Cart"); // adjust path
 const nodemailer = require("nodemailer");
 const { protect } = require("../authMiddleware");
 const Order = require("../models/Order"); // ✅ import new Order model
+const Product = require("../models/Product");
 // Razorpay instance (test keys)
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
@@ -123,6 +124,12 @@ router.post("/verify", protect, async (req, res) => {
 
     // 5️⃣ Empty Cart for this user
     await CartItem.deleteMany({ userId: req.user._id });
+    for (const item of order.orderItems) {
+  await Product.updateOne(
+    { _id: item.productId, "stockBySize.size": item.size },
+    { $inc: { "stockBySize.$.quantity": -item.quantity } }
+  );
+}
 
     // 6️⃣ Send Confirmation Email
     const transporter = nodemailer.createTransport({

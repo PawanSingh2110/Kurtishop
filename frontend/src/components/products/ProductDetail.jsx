@@ -352,7 +352,7 @@ const ProductDetail = ({ setIsCartOpen }) => {
                     <span className="relative z-10">
                       {isAddDisabled
                         ? cartQuantity >= selectedStock
-                          ? "Max limit reached"
+                          ? "out of stock"
                           : "Adding..."
                         : "Add to Cart"}
                     </span>
