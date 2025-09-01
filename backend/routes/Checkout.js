@@ -5,6 +5,8 @@ const Razorpay = require("razorpay");
 const crypto = require("crypto");
 const Checkout = require("../models/Checkout");
 const CartItem = require("../models/Cart"); // adjust path
+const Product = require("../models/Product"); // ✅ adjust path if needed
+
 const nodemailer = require("nodemailer");
 const { protect } = require("../authMiddleware");
 const Order = require("../models/Order"); // ✅ import new Order model
@@ -123,6 +125,13 @@ router.post("/verify", protect, async (req, res) => {
 
     // 5️⃣ Empty Cart for this user
     await CartItem.deleteMany({ userId: req.user._id });
+    // Reduce stock based on size
+    for (const item of order.orderItems) {
+      await Product.updateOne(
+        { _id: item.productId, "stockBySize.size": item.size }, // find product + correct size
+        { $inc: { "stockBySize.$.quantity": -item.quantity } } // decrement stock
+      );
+    }
 
     // 6️⃣ Send Confirmation Email
     const transporter = nodemailer.createTransport({
