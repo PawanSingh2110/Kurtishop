@@ -92,12 +92,14 @@ router.post("/verify-code", async (req, res) => {
     );
 
     // Define cookie options
+// Define cookie options
 const cookieOptions = {
   httpOnly: true,
-  sameSite: "lax", // works best for localhost development
-  secure: false,   // must be false unless using HTTPS
-  maxAge: 7 * 24 * 60 * 60 * 1000,
+  sameSite: "None", // ✅ allow cross-site cookies
+  secure: true,     // ✅ required for HTTPS (Vercel)
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 };
+
 
 
 
@@ -123,12 +125,11 @@ const cookieOptions = {
 
 /// logut
 router.post("/logout", (req, res) => {
-  res.clearCookie("token", {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: false, // Set to true in production with HTTPS
-  });
-
+res.clearCookie("token", {
+  httpOnly: true,
+  sameSite: "None",
+  secure: true,
+});
   return res.status(200).json({ message: "Logged out successfully" });
 });
 
