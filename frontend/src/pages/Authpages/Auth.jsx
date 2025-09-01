@@ -34,10 +34,9 @@ const Auth = () => {
     }
 
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/request-code`,
-        { email }
-      );
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/request-code`, {
+        email,
+      });
 
       toast.success("Verification code sent to your email");
       navigate("/verify-code", { state: { email } });
@@ -55,17 +54,17 @@ const Auth = () => {
       {/* Left Side Image */}
       <div className="hidden lg:block">
         <img
-          className="w-full h-screen object-cover"
+          className="w-full  h-screen object-cover"
           src="https://images.unsplash.com/photo-1597983073512-90bd150e19f6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="background"
         />
       </div>
 
       {/* Right Side Form */}
-      <div className="flex relative items-center justify-center h-screen p-6 sm:p-10">
+      <div className="flex relative items-center justify-center p-6 sm:p-10">
         <a
           href="/"
-          className="absolute top-4 left-4 text-[#580e0c] aleo text-lg"
+          className="absolute top-4 left-4  text-[#580e0c] aleo text-lg "
         >
           Home
         </a>
@@ -80,7 +79,7 @@ const Auth = () => {
           >
             Email:
           </label>
-          <p className="text-[#580e0c] font-medium text-sm mb-2">
+          <p className=" text-[#580e0c] font-medium text-sm mb-2">
             The verification code will be sent to your email
           </p>
           <input
@@ -96,9 +95,7 @@ const Auth = () => {
             onClick={handleSubmit}
             disabled={isSubmitting}
             className={`relative text-white w-full py-3 border bg-[#580e0c] rounded-md font-semibold overflow-hidden transition-all duration-300 ease-in-out transform group ${
-              isSubmitting
-                ? "cursor-not-allowed opacity-50"
-                : "hover:scale-105"
+              isSubmitting ? "cursor-not-allowed opacity-50" : "hover:scale-105"
             }`}
           >
             <span
