@@ -5,21 +5,33 @@ import ProductCard from "../../components/products/ProductCard";
 const Latestsection = () => {
   const [products, setProducts] = useState([]);
 // const backendURL = import.meta.env.VITE_BACKEND_URL;
-  useEffect(() => {
-    const fetchLatestProducts = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/product/latest`,
-          { withCredentials: true }
-        );
-        setProducts(response.data.latestProducts);
-      } catch (error) {
-        console.error("Error fetching latest products:", error);
+useEffect(() => {
+  const fetchLatestProducts = async () => {
+    try {
+      // Check localStorage first
+      const cached = localStorage.getItem("latestProducts");
+      if (cached) {
+        setProducts(JSON.parse(cached));
+        return;
       }
-    };
 
-    fetchLatestProducts();
-  }, []);
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/product/latest`,
+        { withCredentials: true }
+      );
+
+      setProducts(response.data.latestProducts);
+
+      // Save to localStorage
+      console.log(response.data.latestProducts);
+    } catch (error) {
+      console.error("Error fetching latest products:", error);
+    }
+  };
+
+  fetchLatestProducts();
+}, []);
+
 
   return (
     <div className="px-4 lg:px-10">

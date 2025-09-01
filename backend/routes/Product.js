@@ -4,6 +4,8 @@ const Product = require("../models/Product");
 const { protect,adminOnly } = require("../authMiddleware");
 const { upload, cloudinary } = require("../cloudinary");
 const mongoose = require("mongoose");
+const NodeCache = require("node-cache");
+const cache = new NodeCache({ stdTTL: 60 }); // 1 minute TTL
 
 router.post(
   "/create",
@@ -186,18 +188,28 @@ router.get("/detail/:id", async (req, res) => {
 
 //get the latest products
 
+
+
 router.get("/latest", async (req, res) => {
   try {
-    const latestProducts = await Product.find()
-      .sort({ createdAt: -1 }) // newest first
-      .limit(6); // get latest 10
+    const cached = cache.get("latestProducts");
+    if (cached) {
+      console.log("✅ Serving latest products from cache");
+      return res.status(200).json({ latestProducts: cached });
+    }
 
+    const latestProducts = await Product.find()
+      .sort({ createdAt: -1 })
+      .limit(6);
+
+    cache.set("latestProducts", latestProducts);
     res.status(200).json({ latestProducts });
   } catch (error) {
     console.error("Error fetching latest products:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
+
 
 //// get similar producta
 router.get("/similar/:id", async (req, res) => {

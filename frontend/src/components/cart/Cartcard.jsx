@@ -91,7 +91,7 @@ const CartCard = () => {
                   </div>
 
                   {/* Right Side: Total for this item */}
-                  <div className="text-right poppins whitespace-nowrap">
+                  <div className="hidden md:block text-right poppins whitespace-nowrap">
                     <p className="text-lg text-gray-800 mt-2">
                       <span className="text-[#580e0c] font-medium">
                         Total: {item.discountPrice * item.quantity}

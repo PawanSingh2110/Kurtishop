@@ -23,7 +23,7 @@ const CheckoutComponent = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const { data } = await axios.get(`${backendURimport.meta.env.VITE_BACKEND_URL}/cart/`, {
+        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/cart/`, {
           withCredentials: true,
         });
         setOrderItems(data);
@@ -103,7 +103,7 @@ const CheckoutComponent = () => {
 
       // 1️⃣ Create order on backend
       const { data } = await axios.post(
-        "http://localhost:40001/api/pay",
+        `${import.meta.env.VITE_BACKEND_URL}/api/pay`,
         { checkoutItems, shippingAddress, totalPrice: subtotal },
         { withCredentials: true }
       );

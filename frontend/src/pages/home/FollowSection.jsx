@@ -40,18 +40,18 @@ const InstaFeed = () => {
           <span className="font-bold">@pehrin_</span>
         </h2>
 
-        <h2 className="lg:hidden md:mx-40 text-center text-3xl whitespace-nowrap font-serif text-brown-900">
+        <h2 className="lg:hidden md:mx-50 text-center text-3xl whitespace-nowrap font-serif text-brown-900">
           Follow us on <span className="font-bold">@pehrin_</span>
         </h2>
       </div>
 
       {/* Scrollable Flex Row */}
-      <div className="w-screen lg:w-2/3 overflow-x-auto scrollbar-hidden">
-        <div className="flex gap-6">
+      <div className="w-full lg:w-2/3 overflow-x-auto scrollbar-hidden">
+        <div className="flex gap-1 md:gap-6">
           {posts.map((post) => (
             <div
               key={post.id}
-              className="min-w-[20rem] border border-gray-300 rounded-md p-3 bg-white shadow-sm"
+              className="min-w-[19rem] md:min-w-[21rem] border border-gray-300 rounded-md p-3 bg-white shadow-sm"
             >
               {/* Header */}
               <div className="flex items-center gap-2 mb-2">
