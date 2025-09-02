@@ -82,7 +82,7 @@ const VerifyCode = () => {
       </div>
 
       {/* Right Form */}
-      <div className="flex flex-col items-center justify-center min-h-screen lg:h-screen px-8">
+      <div className="flex flex-col items-center justify-center min-h-screen lg:h-screen  px-1 lg:px-8">
         {" "}
         <form
           onSubmit={handleSubmit}
@@ -112,6 +112,8 @@ const VerifyCode = () => {
             inputMode="numeric"
             className="w-full border border-[#580e0c] text-[#580e0c] rounded-lg px-4 py-3 mb-3 focus:outline-none focus:ring-2 focus:ring-[#580e0c] text-lg shadow-sm"
             placeholder="123456"
+            autoComplete="numberic"
+
             autoFocus
           />
           {error && (
