@@ -1,15 +1,13 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "index.js",
-      "use": "@vercel/node"
-    }
+    { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "index.js"
-    }
+    { "src": "/api/(.*)", "dest": "index.js" },
+    { "src": "/product/(.*)", "dest": "index.js" },
+    { "src": "/cart/(.*)", "dest": "index.js" },
+    { "src": "/address/(.*)", "dest": "index.js" },
+    { "src": "/review/(.*)", "dest": "index.js" }
   ]
 }
