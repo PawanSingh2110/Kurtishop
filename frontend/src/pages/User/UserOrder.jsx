@@ -24,8 +24,8 @@ const UserOrder = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <p className="text-xl font-semibold">Loading your orders...</p>
+      <div className="flex items-center justify-center flex-col h-screen">
+        <p className=" aleo text-2xl  font-semibold">Loading your orders...</p>
       </div>
     );
   }
