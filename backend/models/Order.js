@@ -70,6 +70,9 @@ const orderSchema = new mongoose.Schema(
     deliveredAt: {
       type: Date,
     },
+    Estimated:{
+      type: Date,
+    },
 
     paymentStatus: {
       type: String,

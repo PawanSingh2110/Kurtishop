@@ -1,16 +1,22 @@
 // src/pages/UserOrder.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import order from "../../assets/order.png"
+import order from "../../assets/order.png";
+import { Link } from "react-router-dom"; // ✅ import Link
+
 const UserOrder = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/myorders`, {
-          withCredentials: true, // ✅ send cookies for auth
-        });
+        const { data } = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/myorders`,
+          {
+            withCredentials: true, // ✅ send cookies for auth
+          }
+        );
         setOrders(data);
       } catch (error) {
         console.error("Error fetching orders:", error);
@@ -25,7 +31,7 @@ const UserOrder = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center flex-col h-screen">
-        <p className=" aleo text-2xl  font-semibold">Loading your orders...</p>
+        <p className="aleo text-2xl font-semibold">Loading your orders...</p>
       </div>
     );
   }
@@ -33,13 +39,13 @@ const UserOrder = () => {
   if (orders.length === 0) {
     return (
       <div className="flex items-center justify-center h-[70vh]">
-<img src={order} alt="" className="h-96 flex justify-center" />      </div>
+        <img src={order} alt="" className="h-96 flex justify-center" />
+      </div>
     );
   }
 
   return (
-    <div className="  lg:w-[85vh] xl:w-[90vh] aleo   mx-auto">
-
+    <div className="lg:w-[85vh] xl:w-[90vh] aleo mx-auto">
       <div className="space-y-6">
         {orders.map((order) => (
           <div
@@ -66,7 +72,12 @@ const UserOrder = () => {
                     className="w-16 h-16 object-cover rounded-md mr-4"
                   />
                   <div className="flex-1">
-                    <h3 className="text-lg font-medium">{item.name}</h3>
+                    {/* ✅ Link to product details using productId */}
+                    <Link to={`/productdetail/${item.productId}`}>
+                      <h3 className="text-lg font-medium hover:underline">
+                        {item.name}
+                      </h3>
+                    </Link>
                     <p className="text-sm text-gray-500">Size: {item.size}</p>
                     <p className="text-sm text-gray-500">
                       Quantity: {item.quantity}
