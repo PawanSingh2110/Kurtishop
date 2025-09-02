@@ -113,6 +113,9 @@ const VerifyCode = () => {
             className="w-full border border-[#580e0c] text-[#580e0c] rounded-lg px-4 py-3 mb-3 focus:outline-none focus:ring-2 focus:ring-[#580e0c] text-lg shadow-sm"
             placeholder="123456"
             autoComplete="numberic"
+            
+  pattern="[0-9]*"
+
 
             autoFocus
           />
