@@ -11,8 +11,9 @@ const Home = () => {
   return (
     <div className='text-[#580E0C]'>
       <Herosection/>
-      <Latestsection/>
       <Collections/>
+      <Latestsection/>
+      
       <Band/>
       <MainCharacter/>
       <ImageGallery/>
